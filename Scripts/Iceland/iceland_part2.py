@@ -19,7 +19,7 @@ BROWN    = "#5A3A1A"
 H_PAD = 1.5
 V_PAD = 0.9
 
-PROD  = Path("/Users/dishastark/Claude Projects/YouTube/History/Output/Iceland/production")
+PROD  = Path("C:/Users/parth.pandya/Projects/YouTube/Output/Iceland/Needed Final Files")
 MAPS  = PROD / "assets" / "maps"
 CHARS = PROD / "assets" / "characters"
 

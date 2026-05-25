@@ -117,6 +117,39 @@ API: `http://127.0.0.1:7860`
 **Target duration = (VO word count ÷ 145wpm × 60) + 1.5s visual hold**
 Scenes with <5 VO words = hold/transition: use dramatic timing, not word formula.
 
+### Audio mix constants (DO NOT CHANGE)
+| Track | Setting | LUFS | Notes |
+|-------|---------|------|-------|
+| VO (narration) | Reference — no compression | -26.20 LUFS | Do not alter |
+| Piano (raw) | Never use unattenuated | -11.72 LUFS | Drowns VO completely |
+| Piano (mixed) | `volume=0.05` | ~-38 LUFS | ~12 dB below VO — calibrated from Ep1 v2 |
+| Final mix target | — | -19.24 LUFS | |
+
+### ffmpeg stitch constants (DO NOT CHANGE)
+```bash
+ffmpeg -y \
+  -i Iceland60s.mp4 -i IcelandPart1.mp4 -i IcelandPart2.mp4 -i IcelandPart3.mp4 \
+  -i "Iceland Ep1 VO Part 1.mp3" -i "Iceland Ep1 VO Part 2.mp3" -i "Iceland Ep1 VO Part 3.mp3" \
+  -i piano_bg.mp3 \
+  -filter_complex "
+    [0:v][1:v][2:v][3:v]concat=n=4:v=1:a=0[vout];
+    [4:a]adelay=VO1_MS|VO1_MS[vo1];
+    [5:a]adelay=VO2_MS|VO2_MS[vo2];
+    [6:a]adelay=VO3_MS|VO3_MS[vo3];
+    [7:a]aloop=loop=-1:size=2e+09,volume=0.05[bg];
+    [vo1][vo2][vo3][bg]amix=inputs=4:duration=first:dropout_transition=2[aout]
+  " \
+  -map "[vout]" -map "[aout]" \
+  -c:v libx264 -preset fast -crf 18 \
+  -c:a aac -b:a 192k \
+  -movflags +faststart \
+  output.mp4
+```
+- `VO1_MS` = 5300 (VO1 always starts 5.3s into cold open)
+- `VO2_MS` = Iceland60s duration + Part1 duration, in milliseconds
+- `VO3_MS` = Iceland60s duration + Part1 duration + Part2 duration, in milliseconds
+- Piano `volume=0.05` is the single most important constant — never change without re-calibrating
+
 ### VO audio structure (3-part split)
 - Part 1: intro → cold open → founding → Althing establishment
 - Part 2: conversion → exploration → literary age

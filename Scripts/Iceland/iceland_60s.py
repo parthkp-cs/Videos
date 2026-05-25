@@ -503,15 +503,10 @@ class Iceland60s(Scene):
         # VO: "To understand how a tiny island builds that kind of
         #      backbone, you have to go back to the very beginning. 874 AD."
         # ============================================================
-        MAP_PATH = ("/Users/dishastark/Claude Projects/YouTube/History"
-                    "/Output/Iceland/production/assets/maps/north_atlantic.png")
-        if os.path.exists(MAP_PATH):
-            map_bg = ImageMobject(MAP_PATH).set_height(fh)
-            self.add(map_bg)
-        else:
-            map_bg = Rectangle(width=fw, height=fh, fill_color="#0A1828",
-                               fill_opacity=1, stroke_width=0)
-            self.add(map_bg)
+        MAP_PATH = ("C:/Users/parth.pandya/Projects/YouTube/Output/Iceland"
+                    "/Needed Final Files/assets/maps/north_atlantic.png")
+        map_bg = ImageMobject(MAP_PATH).set_height(fh)
+        self.add(map_bg)
 
         backbone = Text(
             "To understand how a tiny island\nbuilds that kind of backbone...",
@@ -553,8 +548,8 @@ class Iceland60s(Scene):
         # ============================================================
         self.camera.background_color = WHITE_BG
 
-        CHARS_PATH = ("/Users/dishastark/Claude Projects/YouTube/History"
-                      "/Output/Iceland/production/assets/characters/")
+        CHARS_PATH = ("C:/Users/parth.pandya/Projects/YouTube/Output/Iceland"
+                      "/Needed Final Files/assets/characters/")
         viking_path = CHARS_PATH + "viking_settler.png"
 
         if os.path.exists(viking_path):
@@ -604,16 +599,28 @@ class Iceland60s(Scene):
         self.play(FadeOut(not_v), FadeOut(monks), FadeOut(first), run_time=0.4)
 
         # ── Ireland → Iceland map ─────────────────────────────────
-        if os.path.exists(MAP_PATH):
-            map_bg3 = ImageMobject(MAP_PATH).set_height(fh)
-            self.add(map_bg3)
-        else:
-            map_bg3 = Rectangle(width=fw, height=fh, fill_color="#0A1828",
-                                fill_opacity=1, stroke_width=0)
-            self.add(map_bg3)
+        # Use clean map (ICELAND text painted out of PNG)
+        CLEAN_MAP = ("C:/Users/parth.pandya/Projects/YouTube/Output/Iceland"
+                     "/Needed Final Files/assets/maps/north_atlantic_clean.png")
+        map_bg3 = ImageMobject(CLEAN_MAP).set_height(fh)
+        self.add(map_bg3)
 
         ireland_pos = [3.0, -2.1, 0]
         iceland_pos = [-0.4,  0.5, 0]
+
+        # Papar icon — tiny monk geo inline (BROWN not in scope, define inline)
+        _brown = "#5A3A1A"
+        p_head = Circle(radius=0.20, fill_color="#C8956A", fill_opacity=1,
+                        stroke_color=DARK, stroke_width=1.0)
+        p_robe = Triangle(fill_color=_brown, fill_opacity=1,
+                          stroke_color=DARK, stroke_width=0.8).scale(0.52)
+        p_robe.next_to(p_head, DOWN, buff=0.02)
+        p_bald = Circle(radius=0.08, fill_color="#8B6A4A", fill_opacity=0.75,
+                        stroke_width=0).move_to(p_head.get_center() + UP * 0.06)
+        papar_icon = VGroup(p_robe, p_head, p_bald)
+        papar_icon.scale(0.9).move_to([-0.9, 1.0, 0])
+        papar_lbl = Text("The Papar", font="Poppins", weight=SEMIBOLD,
+                         font_size=15, color=WHITE).next_to(papar_icon, DOWN, buff=0.06)
 
         ire_dot = Dot(ireland_pos, radius=0.16, color=AMBER, fill_opacity=1)
         ice_dot = Dot(iceland_pos, radius=0.18, color=GREEN,  fill_opacity=1)
@@ -641,15 +648,30 @@ class Iceland60s(Scene):
         monk_boat = VGroup(b_hull, b_mast, b_sail)
         monk_boat.move_to(ireland_pos)
 
-        date_lbl    = Text("c. 800 AD", font="Poppins", weight=SEMIBOLD,
-                           font_size=22, color=AMBER).to_corner(UR, buff=V_PAD)
-        settle_lbl  = Text("Iceland's first known settlers", font="Poppins",
-                           weight=LIGHT, font_size=22, color=WHITE
-                           ).to_edge(DOWN, buff=V_PAD + 0.1)
+        date_lbl   = Text("Year 800 AD", font="Poppins", weight=SEMIBOLD,
+                          font_size=22, color=AMBER).to_corner(UR, buff=V_PAD)
+        settle_lbl = Text("Iceland's first known settlers", font="Poppins",
+                          weight=LIGHT, font_size=22, color=WHITE
+                          ).to_edge(DOWN, buff=V_PAD + 0.1)
 
-        self.play(FadeIn(ire_dot), FadeIn(ire_lbl), run_time=0.5)
-        self.play(Create(route), run_time=1.8)
-        self.play(MoveAlongPath(monk_boat, route), run_time=3.0, rate_func=linear)
-        self.play(GrowFromCenter(ice_dot), FadeIn(ice_lbl),
-                  FadeIn(date_lbl), FadeIn(settle_lbl), run_time=0.6)
-        self.wait(2.5)
+        # Show Papar on Iceland + Ireland dot simultaneously
+        self.play(
+            FadeIn(papar_icon), FadeIn(papar_lbl),
+            FadeIn(ire_dot), FadeIn(ire_lbl),
+            run_time=0.4,
+        )
+        self.wait(0.9)   # hold: Papar already living quietly in Iceland
+
+        # Boat departs Ireland — faster route + sail
+        self.play(Create(route), run_time=1.0)
+        self.play(MoveAlongPath(monk_boat, route), run_time=1.5, rate_func=linear)
+
+        # Arrival: Papar fades, "Iceland" label appears — cover stays to keep map text hidden
+        # VO sync: "They found Iceland"
+        self.play(
+            FadeOut(papar_icon), FadeOut(papar_lbl),
+            GrowFromCenter(ice_dot), FadeIn(ice_lbl),
+            FadeIn(date_lbl), FadeIn(settle_lbl),
+            run_time=0.5,
+        )
+        self.wait(1.7)
