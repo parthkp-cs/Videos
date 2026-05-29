@@ -14,6 +14,7 @@ __pycache__/
 media/
 scenes/media/
 */scenes/media/
+Scripts/*/media/
 
 # Video renders — too large for git
 *.mp4

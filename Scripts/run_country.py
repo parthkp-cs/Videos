@@ -31,8 +31,8 @@ warnings.filterwarnings("ignore")
 # ── Config ────────────────────────────────────────────────────────────────────
 
 BASE_DIR      = Path(__file__).parent.parent
-AGENTS_DIR    = BASE_DIR / "Agents"
-PROMPTS_DIR   = AGENTS_DIR / "prompts"
+AGENTS_DIR    = BASE_DIR / "Scripts" / "agents"
+PROMPTS_DIR   = AGENTS_DIR                        # prompts live directly in agents/
 OUTPUT_DIR    = BASE_DIR / "Output"
 
 SA_FILE       = Path("/Users/dishastark/Claude Projects/dp-drive-497206-c9107abb48b6.json")

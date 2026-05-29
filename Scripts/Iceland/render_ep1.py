@@ -18,7 +18,7 @@ import time
 import shutil
 from pathlib import Path
 
-SCENES_DIR = Path(r"C:\Users\parth.pandya\Projects\YouTube\Output\Iceland\scenes")
+SCENES_DIR = Path(r"C:\Users\parth.pandya\Projects\YouTube\Scripts\Iceland")
 RENDERS_DIR = Path(r"C:\Users\parth.pandya\Projects\YouTube\Output\Iceland\renders")
 RENDERS_DIR.mkdir(exist_ok=True)
 
