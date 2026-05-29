@@ -1,0 +1,6 @@
+TTS SETTINGS: Speed=1, Stability=55%, Similarity=75%, Style=25%
+Voice: Same voice used for EP2 scenes
+---
+Scene 26 | ~29.6s | 68 words
+
+But, and this is the part that tells you everything about Iceland. Christianity came with a horsemeat exemption. Private consumption of horse was still permitted. Exposure of unwanted infants was still allowed. The new faith was adopted on Icelandic terms, negotiated by a Pagan who understood that the alternative was bloodshed. Pragmatism dressed up as theology. It would not be the last time Iceland repackaged necessity as principle.

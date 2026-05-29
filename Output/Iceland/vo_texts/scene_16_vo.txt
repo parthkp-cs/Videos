@@ -1,0 +1,6 @@
+TTS SETTINGS: Speed=1, Stability=55%, Similarity=75%, Style=25%
+Voice: Same voice used for EP2 scenes
+---
+Scene 16 | ~6.5s | 12 words
+
+Then he spent three years sailing along the coast looking for them.

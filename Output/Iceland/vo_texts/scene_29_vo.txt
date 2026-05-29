@@ -1,0 +1,6 @@
+TTS SETTINGS: Speed=1, Stability=55%, Similarity=75%, Style=25%
+Voice: Same voice used for EP2 scenes
+---
+Scene 29 | ~30.5s | 70 words
+
+Erik's son Leif did one better. Around the year 1000 — we now know from tree-ring evidence that Norse settlers occupied L'Anse aux Meadows in Newfoundland in exactly 1021 CE — Leif Eriksson sailed west from Greenland, found an entire continent, established a settlement he called Leifsbuðir, and then went home. Five hundred years before Columbus, Leif found North America, filed no paperwork, and left. History moved on without him.

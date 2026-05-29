@@ -1,0 +1,6 @@
+TTS SETTINGS: Speed=1, Stability=55%, Similarity=75%, Style=25%
+Voice: Same voice used for EP2 scenes
+---
+Scene 10 | ~24.7s | 56 words
+
+Before any Norse settler set foot on the island, a small group of Irish Christian hermits — the papar, as the old texts call them — had already been living there. They had sailed north deliberately, looking for the most remote, God-soaked silence they could find, somewhere between the known world and the edge of it.

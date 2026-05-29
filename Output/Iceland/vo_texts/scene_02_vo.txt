@@ -1,0 +1,6 @@
+TTS SETTINGS: Speed=1, Stability=55%, Similarity=75%, Style=25%
+Voice: Same voice used for EP2 scenes
+---
+Scene 02 | ~20.1s | 45 words
+
+US real estate doomed the global economy in October 2008. Not just the Lehman Brothers and Merrill, the collapse took out financial institutions world-wide. And, Iceland’s three biggest banks - Kaupthing, Landsbanki, Glitnir were also amongst those who got their wind knocked out of them.

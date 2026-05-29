@@ -1,0 +1,6 @@
+TTS SETTINGS: Speed=1, Stability=55%, Similarity=75%, Style=25%
+Voice: Same voice used for EP2 scenes
+---
+Scene 04 | ~12.7s | 27 words
+
+In days, Iceland’s Grocery stores started running short on imported food. In a literal sense, country of three hundred thousand people was, by every measurable standard, bankrupt.

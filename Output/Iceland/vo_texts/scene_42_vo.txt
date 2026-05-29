@@ -1,0 +1,6 @@
+TTS SETTINGS: Speed=1, Stability=55%, Similarity=75%, Style=25%
+Voice: Same voice used for EP2 scenes
+---
+Scene 42 | ~21.4s | 48 words
+
+And through all of it, that original instinct — the one that made people sail to the edge of the world in the first place — kept surfacing. The stubbornness. The pragmatism. The willingness to do something nobody else thought was rational and simply refused to back down.

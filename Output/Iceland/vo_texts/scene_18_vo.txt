@@ -1,0 +1,6 @@
+TTS SETTINGS: Speed=1, Stability=55%, Similarity=75%, Style=25%
+Voice: Same voice used for EP2 scenes
+---
+Scene 18 | ~18.5s | 41 words
+
+Between 874 and 930, somewhere between eight thousand and twenty thousand settlers followed. Most came from western Norway. Some came from Norse-settled communities in Britain and Ireland, bringing Irish wives and Irish slaves whose DNA is still visible in Icelanders today.

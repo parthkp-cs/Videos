@@ -1,0 +1,6 @@
+TTS SETTINGS: Speed=1, Stability=55%, Similarity=75%, Style=25%
+Voice: Same voice used for EP2 scenes
+---
+Scene 12 | ~9.4s | 19 words
+
+Then the Norse arrived, and the monks packed up their bells and their books and their croziers, and left.

@@ -1,0 +1,6 @@
+TTS SETTINGS: Speed=1, Stability=55%, Similarity=75%, Style=25%
+Voice: Same voice used for EP2 scenes
+---
+Scene 34 | ~15.6s | 34 words
+
+Norway's King Hákon IV watched, and waited, and quietly backed different factions in turn. Snorri himself had become a vassal of Hákon, then fallen out of favour. In September 1241, Hákon ordered him killed.

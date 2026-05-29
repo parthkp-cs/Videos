@@ -1,0 +1,6 @@
+TTS SETTINGS: Speed=1, Stability=55%, Similarity=75%, Style=25%
+Voice: Same voice used for EP2 scenes
+---
+Scene 19 | ~20.1s | 45 words
+
+They came because Norway was overcrowded, because Harald was king, and because some people would sail into an active volcanic field before they'd submit to a monarch. Iceland was, from its very first days, a refuge for people who did not want to be ruled.

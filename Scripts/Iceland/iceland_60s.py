@@ -608,17 +608,10 @@ class Iceland60s(Scene):
         ireland_pos = [3.0, -2.1, 0]
         iceland_pos = [-0.4,  0.5, 0]
 
-        # Papar icon — tiny monk geo inline (BROWN not in scope, define inline)
-        _brown = "#5A3A1A"
-        p_head = Circle(radius=0.20, fill_color="#C8956A", fill_opacity=1,
-                        stroke_color=DARK, stroke_width=1.0)
-        p_robe = Triangle(fill_color=_brown, fill_opacity=1,
-                          stroke_color=DARK, stroke_width=0.8).scale(0.52)
-        p_robe.next_to(p_head, DOWN, buff=0.02)
-        p_bald = Circle(radius=0.08, fill_color="#8B6A4A", fill_opacity=0.75,
-                        stroke_width=0).move_to(p_head.get_center() + UP * 0.06)
-        papar_icon = VGroup(p_robe, p_head, p_bald)
-        papar_icon.scale(0.9).move_to([-0.9, 1.0, 0])
+        # Papar icon — actual character image, placed bottom-left below Greenland
+        papar_path = CHARS_PATH + "irish_monk_seated.png"
+        papar_icon = ImageMobject(papar_path).set_height(1.4)
+        papar_icon.move_to([-4.0, -1.5, 0])
         papar_lbl = Text("The Papar", font="Poppins", weight=SEMIBOLD,
                          font_size=15, color=WHITE).next_to(papar_icon, DOWN, buff=0.06)
 
@@ -629,47 +622,22 @@ class Iceland60s(Scene):
         ice_lbl = Text("Iceland", font="Poppins", weight=SEMIBOLD,
                        font_size=22, color=WHITE).next_to(ice_dot, UP,   buff=0.14)
 
-        route = CubicBezier(
-            ireland_pos,
-            [2.2,  0.8, 0],
-            [0.8,  1.3, 0],
-            iceland_pos,
-        )
-        route.set_stroke(color=AMBER, width=3.5, opacity=0.85)
-
-        # Tiny monk boat (inline)
-        b_hull = Polygon([-0.3, -0.08, 0], [-0.3, 0.02, 0],
-                         [ 0.3,  0.02, 0], [ 0.3, -0.08, 0],
-                         fill_color="#3A2A1A", fill_opacity=1, stroke_width=0)
-        b_mast = Line([0, 0.02, 0], [0, 0.35, 0],
-                      stroke_color=DARK, stroke_width=2.5)
-        b_sail = Triangle(fill_color="#D4B88A", fill_opacity=0.85,
-                          stroke_width=0).scale(0.13).move_to([0, 0.2, 0])
-        monk_boat = VGroup(b_hull, b_mast, b_sail)
-        monk_boat.move_to(ireland_pos)
-
         date_lbl   = Text("Year 800 AD", font="Poppins", weight=SEMIBOLD,
                           font_size=22, color=AMBER).to_corner(UR, buff=V_PAD)
         settle_lbl = Text("Iceland's first known settlers", font="Poppins",
                           weight=LIGHT, font_size=22, color=WHITE
                           ).to_edge(DOWN, buff=V_PAD + 0.1)
 
-        # Show Papar on Iceland + Ireland dot simultaneously
+        # Show Papar (bottom-left, below Greenland) + Ireland dot
         self.play(
             FadeIn(papar_icon), FadeIn(papar_lbl),
             FadeIn(ire_dot), FadeIn(ire_lbl),
             run_time=0.4,
         )
-        self.wait(0.9)   # hold: Papar already living quietly in Iceland
+        self.wait(0.9)
 
-        # Boat departs Ireland — faster route + sail
-        self.play(Create(route), run_time=1.0)
-        self.play(MoveAlongPath(monk_boat, route), run_time=1.5, rate_func=linear)
-
-        # Arrival: Papar fades, "Iceland" label appears — cover stays to keep map text hidden
-        # VO sync: "They found Iceland"
+        # Iceland — already settled by the Papar
         self.play(
-            FadeOut(papar_icon), FadeOut(papar_lbl),
             GrowFromCenter(ice_dot), FadeIn(ice_lbl),
             FadeIn(date_lbl), FadeIn(settle_lbl),
             run_time=0.5,

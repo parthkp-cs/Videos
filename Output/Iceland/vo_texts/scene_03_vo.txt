@@ -1,0 +1,6 @@
+TTS SETTINGS: Speed=1, Stability=55%, Similarity=75%, Style=25%
+Voice: Same voice used for EP2 scenes
+---
+Scene 03 | ~13.5s | 29 words
+
+The combined assets for these three Icelandic banks was 11x the size of entire country’s GDP. The fall devalued their currency in half. The stock market shed over 90%.

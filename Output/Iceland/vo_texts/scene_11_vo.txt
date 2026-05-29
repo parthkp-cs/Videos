@@ -1,0 +1,6 @@
+TTS SETTINGS: Speed=1, Stability=55%, Similarity=75%, Style=25%
+Voice: Same voice used for EP2 scenes
+---
+Scene 11 | ~10.2s | 21 words
+
+The place they found is what we call today, Iceland. They settled in. They were having a perfectly good solitary existence.

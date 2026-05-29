@@ -1,0 +1,6 @@
+TTS SETTINGS: Speed=1, Stability=55%, Similarity=75%, Style=25%
+Voice: Same voice used for EP2 scenes
+---
+Scene 39 | ~31.3s | 72 words
+
+It was not conquest. It was a surrender by choice, which is somehow more Icelandic. People who had settled on the edge of the world rather than accept a king had spent three centuries building something extraordinary: a parliament, a legal tradition, a literary culture, and a very specific stubbornness about doing things their own way. They handed it over when the alternative was more of their own neighbours killing each other.

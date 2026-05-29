@@ -1,0 +1,6 @@
+TTS SETTINGS: Speed=1, Stability=55%, Similarity=75%, Style=25%
+Voice: Same voice used for EP2 scenes
+---
+Scene 31 | ~33.8s | 78 words
+
+The man who synthesised it all was Snorri Sturluson, born in 1179. His Prose Edda is, quite simply, the reason we know what we know about Norse mythology. Thor, Odin, Loki, Ragnarök — the entire cosmology that has since spawned films, comics, and theme park rides — exists in its current form because a 13th-century Icelander wrote it down. Without Snorri, those gods would be as obscure as the gods of the Angles and Saxons. You're welcome, Marvel.
