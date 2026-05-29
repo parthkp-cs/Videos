@@ -28,5 +28,8 @@ Output/Iceland/reference/
 # Scene render cache from old pipeline
 Scripts/Iceland/scene_cache/
 
-# Sensitive / auth
-*.json
+# Sensitive / auth — specific files only, not all JSON
+token.json
+*service_account*.json
+*credentials*.json
+client_secret*.json

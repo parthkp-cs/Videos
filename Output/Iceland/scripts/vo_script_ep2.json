@@ -1,0 +1,452 @@
+{
+  "episode": "Iceland Episode 2 — The Volcanoes and the Pirates",
+  "voice_reference": "Needed Final Files/audio/Iceland Ep1 VO Part 1.mp3",
+  "narration_rate_wpm": 145,
+  "parts": {
+    "1": "Scenes 01–10 | Laki cold open → Commonwealth → Old Covenant",
+    "2": "Scenes 11–22 | Danish merger → Plague → Reformation → Monopoly → Barbary Raid",
+    "3": "Scenes 23–34 | Laki return → Althing abolished → Jorgensen → Close"
+  },
+  "segments": [
+    {
+      "id": 1,
+      "part": 1,
+      "scene": "01",
+      "beat": "June 1783 cold open",
+      "text": "June 1783.",
+      "speed": 0.85,
+      "pause_after": 1.2,
+      "note": "Two words. Drop them like a weight. Long pause lets viewer read the date on screen."
+    },
+    {
+      "id": 2,
+      "part": 1,
+      "scene": "01",
+      "beat": "Ground opens",
+      "text": "The ground in southern Iceland simply opens. Not a mountain. Not a crater. A crack. Twenty-seven kilometres of it, tearing across the landscape like the earth is trying to say something. And then it says it, for eight months straight.",
+      "speed": 0.95,
+      "pause_after": 0.8,
+      "note": "Build slowly on 'crack', then accelerate through the 27km line."
+    },
+    {
+      "id": 3,
+      "part": 1,
+      "scene": "02",
+      "beat": "Laki scientific context",
+      "text": "The Laki fissure eruption, the Skaftareldar, is the largest lava-producing eruption in Iceland's recorded history. But the lava isn't the worst part. It's the gas. Approximately 120 million tonnes of sulphur dioxide pour into the atmosphere. Roughly three times the entire European industrial output in 2006. In eight months. From one crack in the ground.",
+      "speed": 1.0,
+      "pause_after": 0.6,
+      "note": "Matter-of-fact delivery on the statistics. Let the numbers land with pauses in the text."
+    },
+    {
+      "id": 4,
+      "part": 1,
+      "scene": "03",
+      "beat": "Livestock death",
+      "text": "The gas kills the grass. The sheep eat the poisoned grass. Around eighty percent of Iceland's sheep die. About half the cattle and horses. Without livestock, there is no food.",
+      "speed": 0.95,
+      "pause_after": 0.5,
+      "note": "Short staccato sentences. Each one lands separately. Slightly slower."
+    },
+    {
+      "id": 5,
+      "part": 1,
+      "scene": "03",
+      "beat": "European haze",
+      "text": "A blue-grey haze rolls across Europe by midsummer. In England alone, an estimated twenty-three thousand people die from its effects. Harvests fail across France. The Northern Hemisphere cools by about 1.3 degrees.",
+      "speed": 1.0,
+      "pause_after": 0.5,
+      "note": "Widen the frame — viewer should feel the scale expanding outward."
+    },
+    {
+      "id": 6,
+      "part": 1,
+      "scene": "04",
+      "beat": "Iceland death toll",
+      "text": "In Iceland, approximately nine thousand people die. On an island of around forty thousand, that means one in every four or five.",
+      "speed": 0.9,
+      "pause_after": 1.5,
+      "note": "Pause after 'four or five' is essential — visual counter on screen needs time to register."
+    },
+    {
+      "id": 7,
+      "part": 1,
+      "scene": "04",
+      "beat": "Not a statistic",
+      "text": "That is not a statistic you absorb. That is every family, every village, everyone knowing exactly who didn't make it through the winter.",
+      "speed": 0.88,
+      "pause_after": 1.8,
+      "note": "Softest, most deliberate delivery in the episode. Longest beat-hold. Let it sit."
+    },
+    {
+      "id": 8,
+      "part": 1,
+      "scene": "05",
+      "beat": "Five centuries hook",
+      "text": "Iceland in 1783 has already been through five centuries of foreign rule, two waves of plague, a pirate raid, a trade monopoly that strangled it dry, and a Reformation enforced at sword point. And now this.",
+      "speed": 1.0,
+      "pause_after": 0.8,
+      "note": "Build the list with momentum. 'And now this.' punches at the end — slight pause before it."
+    },
+    {
+      "id": 9,
+      "part": 1,
+      "scene": "05",
+      "beat": "Rewind hook",
+      "text": "How did Iceland get here? Let's go back. Back to 1262, when the Icelanders handed themselves over. Voluntarily. Which is somehow the worst part.",
+      "speed": 0.95,
+      "pause_after": 1.5,
+      "note": "This triggers the rewind clock on screen. 'Voluntarily.' and 'the worst part.' both need space."
+    },
+    {
+      "id": 10,
+      "part": 1,
+      "scene": "06",
+      "beat": "Commonwealth worked",
+      "text": "The Icelandic Commonwealth had worked for three hundred years without a king, without an army. Held together by the Althing, the world's oldest surviving parliament, and the stubbornness of a population who had sailed to the edge of the world specifically to avoid being governed.",
+      "speed": 1.0,
+      "pause_after": 0.4,
+      "note": "Warm tone here — this is the before. The good era. Let it breathe slightly."
+    },
+    {
+      "id": 11,
+      "part": 1,
+      "scene": "07",
+      "beat": "Sturlung Age",
+      "text": "Then the Sturlung Age happened. Forty years of clan warfare. Iceland's great families tore into each other while Norway's King Hakon the Fourth watched and applied pressure.",
+      "speed": 0.95,
+      "pause_after": 0.6,
+      "note": "'Forty years.' — mini pause naturally in text. Slightly darker tone."
+    },
+    {
+      "id": 12,
+      "part": 1,
+      "scene": "08",
+      "beat": "Snorri cellar",
+      "text": "Snorri Sturluson, Iceland's greatest writer and historian, ended up in his cellar at Reykholt in 1241. Seventy of Hakon's men outside. His last recorded words: Eigi skal hoggva. Do not strike.",
+      "speed": 0.9,
+      "pause_after": 0.8,
+      "note": "Drop pace as we approach the death. The Icelandic phrase should land slowly."
+    },
+    {
+      "id": 13,
+      "part": 1,
+      "scene": "08",
+      "beat": "They struck",
+      "text": "They struck.",
+      "speed": 0.85,
+      "pause_after": 2.0,
+      "note": "Two words. Full 2-second silence. The screen goes black at this moment."
+    },
+    {
+      "id": 14,
+      "part": 1,
+      "scene": "09",
+      "beat": "Old Covenant signed",
+      "text": "Twenty years later, the surviving chieftains signed the Old Covenant and became Norwegian subjects. They kept their laws, in theory. They kept the Althing, in form. But sovereignty was gone. And once you hand that over, getting it back turns out to take about seven hundred years.",
+      "speed": 1.0,
+      "pause_after": 1.0,
+      "note": "The last line should land with dry irony. 'Seven hundred years.' — almost offhand."
+    },
+    {
+      "id": 15,
+      "part": 2,
+      "scene": "11",
+      "beat": "Danish merger",
+      "text": "In 1380, Norway merged with Denmark. Iceland came along. Whether Icelanders were formally informed is not entirely clear. They were simply Danish now. Not through conquest, but through a dynastic reshuffling in which no one thought to ask Iceland.",
+      "speed": 1.0,
+      "pause_after": 0.5,
+      "note": "Dry, bureaucratic tone. 'No one thought to ask Iceland.' slight comic timing — brief natural pause before it."
+    },
+    {
+      "id": 16,
+      "part": 2,
+      "scene": "11",
+      "beat": "It got worse",
+      "text": "It got worse before it got worse.",
+      "speed": 0.9,
+      "pause_after": 1.0,
+      "note": "Single sentence. Ironic. Deliberate. Let it breathe after."
+    },
+    {
+      "id": 17,
+      "part": 2,
+      "scene": "12",
+      "beat": "Black Death",
+      "text": "The Black Death arrived in 1402, carried on a ship. It killed somewhere between a quarter and half the population. Scholars argue the exact figure. The people who died found the academic debate less interesting. It came back in 1494. Iceland's medieval population never fully recovered from either wave.",
+      "speed": 1.0,
+      "pause_after": 0.6,
+      "note": "The scholar line is the episode's driest joke — deliver it with complete seriousness. That's the only way it works."
+    },
+    {
+      "id": 18,
+      "part": 2,
+      "scene": "13",
+      "beat": "Reformation intro",
+      "text": "Then came the Reformation. King Christian the Third of Denmark decided his entire kingdom was Lutheran now. In Iceland, one man stood in the way: Jon Arason, the Catholic bishop of Holar.",
+      "speed": 1.0,
+      "pause_after": 0.4,
+      "note": "Pause after 'Holar' — Jon Arason's intro moment. Let avatar appear."
+    },
+    {
+      "id": 19,
+      "part": 2,
+      "scene": "13",
+      "beat": "Jon Arason bio",
+      "text": "Poet, nationalist, father of at least nine children. The bishop apparently kept busy. He understood the Reformation for exactly what it was: foreign cultural control wearing a clerical collar.",
+      "speed": 1.0,
+      "pause_after": 0.5,
+      "note": "Slight warmth on the 'kept busy' line. Appreciate him before he dies."
+    },
+    {
+      "id": 20,
+      "part": 2,
+      "scene": "14",
+      "beat": "He resisted",
+      "text": "He resisted for decades.",
+      "speed": 0.88,
+      "pause_after": 1.2,
+      "note": "Four words. Hold the pause — the screen shows the Lutheran advance slowly and slowly he holds them off."
+    },
+    {
+      "id": 21,
+      "part": 2,
+      "scene": "15",
+      "beat": "Jon Arason executed",
+      "text": "On the seventh of November, 1550, he was beheaded alongside two of his sons, Ari and Bjorn. Catholic properties were seized by Danish administrators. Iceland's spiritual life was changed by royal decree. The island took the blow and kept going.",
+      "speed": 0.9,
+      "pause_after": 1.5,
+      "note": "Slow and measured. 'Ari and Bjorn' should carry weight. 'Kept going' is the first instance of that refrain."
+    },
+    {
+      "id": 22,
+      "part": 2,
+      "scene": "16",
+      "beat": "Monopoly intro",
+      "text": "The trade monopoly landed in 1602 and it landed hard. The Danish crown carved Iceland into trading districts, each handed to a licensed merchant. Icelanders sold to them and bought from them at prices the merchants set. Fish went out cheap. Consumer goods came in expensive. Economic diversification was impossible by design. The monopoly ran until 1787. Its damage ran considerably longer.",
+      "speed": 1.0,
+      "pause_after": 0.5,
+      "note": "Matter-of-fact institutional tone. The monopoly is cold and bureaucratic — voice should match."
+    },
+    {
+      "id": 23,
+      "part": 2,
+      "scene": "17",
+      "beat": "Monopoly defenceless",
+      "text": "The monopoly didn't just impoverish Iceland. It made it defenceless. No surplus meant no investment, no infrastructure, no capacity to respond when things went catastrophically wrong.",
+      "speed": 1.0,
+      "pause_after": 0.8,
+      "note": "Pause before 'catastrophically wrong' — what comes next is the corsairs."
+    },
+    {
+      "id": 24,
+      "part": 2,
+      "scene": "18",
+      "beat": "Barbary corsairs",
+      "text": "Barbary corsairs.",
+      "speed": 0.85,
+      "pause_after": 1.5,
+      "note": "Two words. Complete tonal shift. The mystery ship appears on screen. Maximum pause."
+    },
+    {
+      "id": 25,
+      "part": 2,
+      "scene": "19",
+      "beat": "1627 raid logistics",
+      "text": "In 1627, ships from Algiers, commanded by Murat Reis the Younger, a Dutchman who had converted to Islam and gone into the raiding business, arrived on the coast of Iceland. They hit the East Fjords, then Grindavik, then spent three days on the Vestmannaeyjar islands. They killed approximately fifty people. They kidnapped approximately four hundred.",
+      "speed": 1.0,
+      "pause_after": 0.5,
+      "note": "The parenthetical about Murat Reis works as a dry aside — slight drop in pace for it."
+    },
+    {
+      "id": 26,
+      "part": 2,
+      "scene": "20",
+      "beat": "Tyrkjaranid naming",
+      "text": "Four hundred Icelanders were loaded onto ships and transported to North Africa to be sold into slavery. The event entered memory as Tyrkjaranid, the Turkish Raid. Because 'Algerian raid by a Dutch convert' apparently lacked the necessary ring.",
+      "speed": 1.0,
+      "pause_after": 0.5,
+      "note": "The naming joke should land deadpan. 'Lacked the necessary ring.' — understated."
+    },
+    {
+      "id": 27,
+      "part": 2,
+      "scene": "21",
+      "beat": "Ransom context",
+      "text": "The monopoly meant no money to ransom them quickly. Most spent the rest of their lives in Algiers. About fifty eventually returned.",
+      "speed": 0.95,
+      "pause_after": 0.4,
+      "note": "Quiet. These are real people who didn't come home."
+    },
+    {
+      "id": 28,
+      "part": 2,
+      "scene": "22",
+      "beat": "Gudridur story",
+      "text": "The most famous was Gudridur Simonardottir, nine years in North Africa before coming home to marry the great poet Hallgrimur Petursson. She endured. She rebuilt. She made a life. That pattern will keep coming up.",
+      "speed": 0.9,
+      "pause_after": 1.5,
+      "note": "Warm, slow. 'She endured. She rebuilt. She made a life.' — three beats, each with its own pause in delivery."
+    },
+    {
+      "id": 29,
+      "part": 3,
+      "scene": "23",
+      "beat": "Laki return",
+      "text": "And then 1783. Now you know how Iceland got there.",
+      "speed": 0.9,
+      "pause_after": 0.8,
+      "note": "Callback to the cold open. The crack reappears on screen. Quiet recognition."
+    },
+    {
+      "id": 30,
+      "part": 3,
+      "scene": "24",
+      "beat": "Laki recap short",
+      "text": "The fissure opens. Eight months of lava and sulphur. Eighty percent of the sheep, gone. A quarter of the people, gone.",
+      "speed": 0.92,
+      "pause_after": 0.6,
+      "note": "Echo of cold open but faster — the viewer already knows. Let 'gone' land each time."
+    },
+    {
+      "id": 31,
+      "part": 3,
+      "scene": "25",
+      "beat": "French Revolution",
+      "text": "The haze drifts south and fails the harvests of France. Historians have argued, carefully and with caveats, that Laki's agricultural disruption contributed to the conditions that produced the French Revolution six years later. Iceland did not plan this. Iceland was simply having a routine geological episode and accidentally destabilising Western Europe.",
+      "speed": 1.0,
+      "pause_after": 0.4,
+      "note": "Build to 'accidentally destabilising Western Europe' with increasing warmth."
+    },
+    {
+      "id": 32,
+      "part": 3,
+      "scene": "25",
+      "beat": "Most Icelandic thing",
+      "text": "It is, in some ways, the most Icelandic thing Iceland has ever done.",
+      "speed": 0.95,
+      "pause_after": 1.0,
+      "note": "The episode's best line. Deliver with complete seriousness. Pause to let it land."
+    },
+    {
+      "id": 33,
+      "part": 3,
+      "scene": "26",
+      "beat": "Monopoly still in place",
+      "text": "The trade monopoly was still in place. Relief supplies could not be freely imported. The island was starving and the mechanism designed to help was the same mechanism that had been bleeding it dry for eighty years.",
+      "speed": 1.0,
+      "pause_after": 0.6,
+      "note": "Bleak, flat tone. The irony should be in the words, not the delivery."
+    },
+    {
+      "id": 34,
+      "part": 3,
+      "scene": "27",
+      "beat": "Althing abolished",
+      "text": "By 1800, the Althing itself was gone. Abolished by royal decree. A High Court in Reykjavik took its place. Iceland was no longer a nation in any practical sense. A remote administrative district, periodically devastated by geology, locked into a system designed to extract what little it could produce.",
+      "speed": 0.95,
+      "pause_after": 1.0,
+      "note": "'Abolished by royal decree.' — the stamp sound fires here. Brief natural pause after that phrase."
+    },
+    {
+      "id": 35,
+      "part": 3,
+      "scene": "28",
+      "beat": "Jorgensen intro",
+      "text": "Then June 1809. A Danish-born adventurer named Jorgen Jorgensen arrived in Reykjavik. He found the Danish governor Count Trampe blocking all trade per monopoly rules and responded by arresting him.",
+      "speed": 1.0,
+      "pause_after": 0.4,
+      "note": "Light energy returns. Jorgensen is absurd but earnest. Tone shifts slightly warmer."
+    },
+    {
+      "id": 36,
+      "part": 3,
+      "scene": "28",
+      "beat": "Jorgensen proclamations",
+      "text": "He declared Iceland independent from Denmark, proclaimed himself Protector of Iceland, Commander in Chief by Land and Sea, and issued proclamations in English. He seemed genuinely enthusiastic about the whole project.",
+      "speed": 1.02,
+      "pause_after": 0.8,
+      "note": "The list of self-appointed titles builds with slightly comic momentum. 'Genuinely enthusiastic' is the landing."
+    },
+    {
+      "id": 37,
+      "part": 3,
+      "scene": "29",
+      "beat": "Sixty-two days",
+      "text": "His reign lasted sixty-two days.",
+      "speed": 0.85,
+      "pause_after": 2.0,
+      "note": "The year counter on screen ticks forward. Six words. Full 2-second hold."
+    },
+    {
+      "id": 38,
+      "part": 3,
+      "scene": "30",
+      "beat": "HMS Talbot arrives",
+      "text": "In August, HMS Talbot sailed into Reykjavik harbour. Its captain noted Jorgensen was in violation of his parole from a prior arrest in Britain. He was taken aboard, transported to London, and eventually transported again as a convict to Tasmania.",
+      "speed": 1.0,
+      "pause_after": 0.4,
+      "note": "Matter-of-fact. The navy barely registers the incident. That's the joke."
+    },
+    {
+      "id": 39,
+      "part": 3,
+      "scene": "30",
+      "beat": "Dog-Days King",
+      "text": "Icelanders remember him as Jorundur hundadagakonungur. Jorgen the Dog-Days King. Collected by a passing warship, gone before autumn.",
+      "speed": 0.95,
+      "pause_after": 0.5,
+      "note": "The Icelandic name should land clearly. Slight pause before the translation."
+    },
+    {
+      "id": 40,
+      "part": 3,
+      "scene": "30",
+      "beat": "Jorgensen farce close",
+      "text": "The whole affair has the quality of elaborate farce. But underneath it, something real: even in 1809, an outsider could see Iceland deserved to govern itself. He was just not quite the right outsider.",
+      "speed": 0.95,
+      "pause_after": 1.5,
+      "note": "The pivot from comedy to genuine. 'Not quite the right outsider.' should land with warmth and sadness together."
+    },
+    {
+      "id": 41,
+      "part": 3,
+      "scene": "31",
+      "beat": "Six centuries litany",
+      "text": "Plague, twice. Piracy from a direction that makes no geographical sense. A Reformation enforced by beheading. A monopoly designed to keep the island poor. A volcanic catastrophe that killed a quarter of the population and accidentally destabilised France. The parliament abolished. A sixty-two-day king collected by the Navy. Six centuries of foreign rule. Six centuries of endurance.",
+      "speed": 0.92,
+      "pause_after": 1.2,
+      "note": "Each item in the list is a beat. Pace slightly slower than reading — deliberate, building. 'Six centuries of endurance.' is the climax before the close."
+    },
+    {
+      "id": 42,
+      "part": 3,
+      "scene": "32",
+      "beat": "Back to Laki close",
+      "text": "Go back to Laki. 1783. Forty thousand people, decimated, isolated, locked into a system designed to bleed them dry. No rescue. No cavalry. What there was: people who stayed, who rebuilt, who remembered the sagas, who kept speaking a language barely changed in a thousand years, who held onto the memory of what Iceland had once been. Self-governing. Beholden to no king.",
+      "speed": 0.9,
+      "pause_after": 1.0,
+      "note": "The warmest delivery in the episode. Rising on 'who stayed, who rebuilt, who remembered.' 'Self-governing. Beholden to no king.' — drop back to quiet."
+    },
+    {
+      "id": 43,
+      "part": 3,
+      "scene": "33",
+      "beat": "Grandchildren",
+      "text": "Those people's grandchildren's grandchildren looked at six centuries of this and decided enough was enough.",
+      "speed": 0.9,
+      "pause_after": 1.5,
+      "note": "Quiet. Let it sit. Next line is the teaser."
+    },
+    {
+      "id": 44,
+      "part": 3,
+      "scene": "34",
+      "beat": "Episode 3 teaser",
+      "text": "That is Episode 3.",
+      "speed": 0.88,
+      "pause_after": 3.0,
+      "note": "Final line. 3-second trailing silence before music closes out. Short and definitive."
+    }
+  ]
+}
