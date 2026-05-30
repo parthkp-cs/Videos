@@ -15,6 +15,7 @@ media/
 scenes/media/
 */scenes/media/
 Scripts/*/media/
+Output/*/videos/
 
 # Video renders — block Manim cache and scratch renders
 *.mp4

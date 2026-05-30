@@ -18,9 +18,12 @@ import time
 import shutil
 from pathlib import Path
 
-SCENES_DIR = Path(r"C:\Users\parth.pandya\Projects\YouTube\Scripts\Iceland")
-RENDERS_DIR = Path(r"C:\Users\parth.pandya\Projects\YouTube\Output\Iceland\renders")
+SCENES_DIR  = Path(__file__).resolve().parent
+RENDERS_DIR = SCENES_DIR.parents[1] / "Output" / "Iceland" / "renders"
 RENDERS_DIR.mkdir(exist_ok=True)
+
+# Manim writes output to Output/Iceland/videos/ via manim.cfg media_dir
+MANIM_VIDEOS = SCENES_DIR.parents[1] / "Output" / "Iceland" / "videos"
 
 SCENES = [
     ( 1, "IcelandEP1_S01_TitleCard"),
@@ -78,9 +81,9 @@ QUALITY_SUBDIR = {
 
 
 def find_rendered_mp4(scene_num: int, classname: str, quality: str) -> Path | None:
-    """Find the MP4 Manim wrote under scenes/media/videos/."""
+    """Find the MP4 Manim wrote under Output/Iceland/videos/ (via manim.cfg media_dir)."""
     subdir = QUALITY_SUBDIR.get(quality, "1080p60")
-    mp4 = SCENES_DIR / "media" / "videos" / f"scene_{scene_num:02d}" / subdir / f"{classname}.mp4"
+    mp4 = MANIM_VIDEOS / f"scene_{scene_num:02d}" / subdir / f"{classname}.mp4"
     return mp4 if mp4.exists() else None
 
 
@@ -97,7 +100,7 @@ def render_scene(scene_num: int, classname: str, quality: str, force: bool) -> b
 
     result = subprocess.run(
         [
-            "py", "-3.12", "-m", "manim",
+            sys.executable, "-m", "manim",
             f"-{quality}",
             str(scene_file),
             classname,
