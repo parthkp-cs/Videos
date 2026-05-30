@@ -2,7 +2,7 @@
 from manim import *
 from pathlib import Path
 
-BASE = Path(r"C:\Users\parth.pandya\Projects\YouTube\Output\Iceland")
+BASE = Path(__file__).resolve().parents[2] / "Output" / "Iceland"
 SFX  = BASE / "sfx"
 VO   = BASE / "vo"
 

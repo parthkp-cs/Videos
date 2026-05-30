@@ -28,17 +28,22 @@ BANK_GREY = "#333333"
 
 
 def make_crash_graph(origin: np.ndarray) -> VMobject:
-    """Hand-crafted stock crash path."""
+    """Crash starts at New York and spreads east all the way off-screen toward Asia."""
     ox, oy = origin[0], origin[1]
     pts = [
-        [ox,      oy     ],
-        [ox+0.3,  oy-0.1 ],
-        [ox+0.55, oy+0.05],   # dead-cat
-        [ox+0.8,  oy-0.2 ],
-        [ox+1.0,  oy+0.02],   # last gasp
-        [ox+1.25, oy-0.4 ],
-        [ox+1.5,  oy-0.9 ],
-        [ox+1.7,  oy-1.5 ],
+        [ox,       oy      ],   # New York — crash origin
+        [ox+0.3,   oy-0.1  ],
+        [ox+0.55,  oy+0.05 ],   # dead-cat bounce
+        [ox+0.8,   oy-0.2  ],
+        [ox+1.0,   oy+0.02 ],   # last gasp
+        [ox+1.25,  oy-0.4  ],
+        [ox+1.5,   oy-0.9  ],   # US crash floor
+        [ox+2.5,   oy-0.5  ],   # spreads east over Atlantic, partial recovery
+        [ox+4.0,   oy-0.7  ],   # hitting Europe
+        [ox+5.5,   oy-0.35 ],   # small European bounce
+        [ox+7.0,   oy-0.75 ],   # Middle East / Central Asia
+        [ox+9.0,   oy-0.55 ],   # South Asia, line going off-screen
+        [ox+11.5,  oy-0.9  ],   # East Asia — off screen right
     ]
     line = VMobject(color=BANK_RED, stroke_width=3.5)
     line.set_points_as_corners([[x, y, 0] for x, y in pts])
@@ -77,42 +82,36 @@ class IcelandEP1_S02_BanksCollapse(Scene):
         Text.set_default(font="Poppins")
 
         # ══════════════════════════════════════════════════════
-        # PHASE 1 — North Atlantic map, crash graph over US
+        # PHASE 1 + 2 — Map visible; crash graph draws from NY
+        # to Asia continuously while spread arcs appear on top
         # ══════════════════════════════════════════════════════
         na_map = load_map("north_atlantic_wide")
         self.play(FadeIn(na_map), run_time=0.7)
 
-        # Crash graph draws over US region
-        graph = make_crash_graph(US_DOT)
-        self.play(Create(graph), run_time=2.2, rate_func=linear)
-
-        # ══════════════════════════════════════════════════════
-        # PHASE 2 — Crash spreads: US → Europe → Iceland
-        # ══════════════════════════════════════════════════════
-        us_dot  = Dot(US_DOT,      radius=0.14, color=BANK_RED)
-        eu_dot  = Dot(EUROPE_DOT,  radius=0.14, color=BANK_RED)
-        ic_dot  = Dot(ICELAND_DOT, radius=0.14, color=BANK_RED)
-
-        self.play(FadeIn(us_dot), run_time=0.3)
-
-        # Arc from US to Europe
+        graph     = make_crash_graph(US_DOT)
+        us_dot    = Dot(US_DOT,      radius=0.14, color=BANK_RED)
+        eu_dot    = Dot(EUROPE_DOT,  radius=0.14, color=BANK_RED)
+        ic_dot    = Dot(ICELAND_DOT, radius=0.14, color=BANK_RED)
         arc_us_eu = ArcBetweenPoints(US_DOT, EUROPE_DOT,
-                                     angle=-TAU/6, color=BANK_RED,
-                                     stroke_width=2.5)
-        self.play(Create(arc_us_eu), FadeIn(eu_dot), run_time=1.0)
-
-        # Arc from US to Iceland
+                                     angle=-TAU/6, color=BANK_RED, stroke_width=2.5)
         arc_us_ic = ArcBetweenPoints(US_DOT, ICELAND_DOT,
-                                     angle=TAU/8, color=BANK_RED,
-                                     stroke_width=2.5)
-        self.play(Create(arc_us_ic), FadeIn(ic_dot), run_time=0.8)
+                                     angle=TAU/8,  color=BANK_RED, stroke_width=2.5)
+        ring = Circle(radius=0.45, color=BANK_RED, stroke_width=3).move_to(ICELAND_DOT)
 
-        # Pulse ring on Iceland
-        ring = Circle(radius=0.45, color=BANK_RED, stroke_width=3)
-        ring.move_to(ICELAND_DOT)
-        self.play(Create(ring), run_time=0.5)
-        self.play(ring.animate.scale(1.8).set_stroke(opacity=0),
-                  run_time=0.6)
+        # Graph draws for the full map duration (5.4s);
+        # spread overlays appear in sequence during the same window
+        GRAPH_T = 5.4
+        self.play(
+            Create(graph, run_time=GRAPH_T, rate_func=linear),
+            Succession(
+                FadeIn(us_dot,  run_time=0.3),
+                AnimationGroup(Create(arc_us_eu, run_time=1.0), FadeIn(eu_dot, run_time=1.0)),
+                AnimationGroup(Create(arc_us_ic, run_time=0.8), FadeIn(ic_dot, run_time=0.8)),
+                Create(ring, run_time=0.5),
+                ring.animate(run_time=0.6).scale(1.8).set_stroke(opacity=0),
+                Wait(2.2),   # pad Succession to match GRAPH_T
+            ),
+        )
 
         # ══════════════════════════════════════════════════════
         # PHASE 3 — Zoom into Iceland: crossfade to iceland_overview
