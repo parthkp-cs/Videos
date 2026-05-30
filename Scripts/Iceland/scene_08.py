@@ -17,12 +17,11 @@ class IcelandEP1_S08_TimeRewind(Scene):
     VD = 7.2   # ffprobe confirmed actual TTS duration
 
     def construct(self):
-        self.camera.background_color = "#B3CDE0"  # matches ocean colour of map
+        self.camera.background_color = "#C8DCF0"
         Text.set_default(font="Poppins")
-        MAP_PATH = Path(__file__).resolve().parents[2] / "Output/Iceland/maps/north_atlantic_clean.png"
+        MAP_PATH = Path(__file__).resolve().parents[2] / "Output/Iceland/maps/north_atlantic_iceland.png"
         sea_map = ImageMobject(str(MAP_PATH))
-        sea_map.set_height(config.frame_height)   # fill frame top-to-bottom, no black bars
-        sea_map.move_to(ORIGIN)
+        sea_map.set_width(config.frame_width).move_to(ORIGIN)
         self.add(sea_map)
         # Year counter — hero of the scene, consistent size, paced to fill VO
         years = ["2008", "1944", "1874", "1262", "1000", "874"]
@@ -40,8 +39,7 @@ class IcelandEP1_S08_TimeRewind(Scene):
             self.play(FadeTransform(yr_txt, new_t), run_time=PER_YEAR)
             yr_txt = new_t
 
-        # "874" holds as the final frame
+        # "874" holds — NO fadeout, scene 09 picks up seamlessly from here
         T = FADE_IN + N_TRANS * PER_YEAR
         self.wait(max(self.VD - T, 0) + 1.5)
-        self.play(FadeOut(Group(*self.mobjects)), run_time=1.0)
 

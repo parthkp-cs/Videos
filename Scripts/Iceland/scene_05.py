@@ -46,7 +46,7 @@ class IcelandEP1_S05_MostCountries(Scene):
 
         self.play(FadeIn(line1, shift=UP * 0.2), run_time=0.5)
         self.play(FadeIn(line2, shift=UP * 0.2), run_time=0.5)
-        self.wait(max(self.VO_INTRO - 1.0, 0))
+        self.wait(max(self.VO_INTRO - 2.0, 0))   # -1s shorter per user request
         self.play(FadeOut(VGroup(line1, line2)), run_time=0.3)
 
         # ══════════════════════════════════════════════════════
@@ -104,4 +104,4 @@ class IcelandEP1_S05_MostCountries(Scene):
 
         T4 = 0.35 + 0.4 + 0.3
         self.wait(max(self.VO_BEAT4 - T4, 0) + 1.5)
-        self.play(FadeOut(Group(*self.mobjects)), run_time=0.8)
+        # NO FadeOut — scene 06 begins directly with puppet still on screen

@@ -33,6 +33,9 @@ Output/*/videos/
 # Scene render cache from old pipeline
 Scripts/Iceland/scene_cache/
 
+# Manim text SVG cache
+Output/*/texts/
+
 # Sensitive / auth — specific files only, not all JSON
 token.json
 *service_account*.json

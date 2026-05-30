@@ -98,9 +98,8 @@ class IcelandEP1_S02_BanksCollapse(Scene):
                                      angle=TAU/8,  color=BANK_RED, stroke_width=2.5)
         ring = Circle(radius=0.45, color=BANK_RED, stroke_width=3).move_to(ICELAND_DOT)
 
-        # Graph draws for the full map duration (5.4s);
-        # spread overlays appear in sequence during the same window
-        GRAPH_T = 5.4
+        # Graph draws for extended map duration (8.4s — Phase 3+4 removed, time folded in)
+        GRAPH_T = 8.4
         self.play(
             Create(graph, run_time=GRAPH_T, rate_func=linear),
             Succession(
@@ -109,41 +108,17 @@ class IcelandEP1_S02_BanksCollapse(Scene):
                 AnimationGroup(Create(arc_us_ic, run_time=0.8), FadeIn(ic_dot, run_time=0.8)),
                 Create(ring, run_time=0.5),
                 ring.animate(run_time=0.6).scale(1.8).set_stroke(opacity=0),
-                Wait(2.2),   # pad Succession to match GRAPH_T
+                Wait(5.2),   # extended — removes need for separate Iceland zoom scene
             ),
         )
 
-        # ══════════════════════════════════════════════════════
-        # PHASE 3 — Zoom into Iceland: crossfade to iceland_overview
-        # ══════════════════════════════════════════════════════
-        ic_overview = load_map("iceland_overview")
-        ic_overview.set_opacity(0)
-        self.add(ic_overview)   # added behind the overlay elements
-
+        # Direct cut to white → banks (no Iceland overview, no wipe)
         self.play(
             FadeOut(Group(na_map, graph, us_dot, eu_dot, ic_dot,
                           arc_us_eu, arc_us_ic)),
-            ic_overview.animate.set_opacity(1),
-            run_time=1.2
+            run_time=0.4,
         )
-
-        # Iceland label
-        ic_lbl = Text("Iceland", font="Poppins", weight=BOLD,
-                      font_size=36, color=BANK_RED).move_to([0.0, 2.6, 0])
-        self.play(FadeIn(ic_lbl), run_time=0.5)
-        self.wait(0.8)
-
-        # ══════════════════════════════════════════════════════
-        # PHASE 4 — Wipe to white
-        # ══════════════════════════════════════════════════════
-        wipe = Rectangle(
-            width=config.frame_width * 2 + 1, height=config.frame_height + 1,
-            fill_color=WHITE, fill_opacity=1, stroke_width=0
-        ).move_to([-config.frame_width, 0, 0])
-
-        self.play(wipe.animate.move_to([0.5, 0, 0]),
-                  run_time=0.5, rate_func=linear)
-        self.remove(ic_overview, ic_lbl, wipe)
+        self.camera.background_color = WHITE
 
         # ══════════════════════════════════════════════════════
         # PHASE 5 — Three Icelandic bank buildings

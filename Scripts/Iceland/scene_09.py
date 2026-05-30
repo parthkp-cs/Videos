@@ -21,12 +21,12 @@ class IcelandEP1_S09_BackUpFurther(Scene):
     VD = 6.19
 
     def construct(self):
-        self.camera.background_color = "#B3CDE0"
+        self.camera.background_color = "#D6E8F5"
         Text.set_default(font="Poppins")
 
-        # ── Map background (continuous from scene 08) ──────
-        sea_map = ImageMobject(str(MAPS / "north_atlantic_clean.png"))
-        sea_map.set_height(config.frame_height).move_to(ORIGIN)
+        # ── Map background — north_atlantic_wide (same as scene 02) ──────
+        sea_map = ImageMobject(str(MAPS / "north_atlantic_wide.png"))
+        sea_map.set_width(config.frame_width).move_to(ORIGIN)
         self.add(sea_map)
 
         # ══════════════════════════════════════════════════════
@@ -34,7 +34,7 @@ class IcelandEP1_S09_BackUpFurther(Scene):
         # ══════════════════════════════════════════════════════
         yr874 = Text("874", font="Poppins", weight=BOLD,
                      font_size=120, color=AMBER).move_to(ORIGIN)
-        self.play(FadeIn(yr874, scale=1.1), run_time=0.3)
+        self.add(yr874)   # seamless from scene 08 — "874" already on screen
 
         # Red strikethrough draws across the text
         strike = Line(
@@ -99,14 +99,36 @@ class IcelandEP1_S09_BackUpFurther(Scene):
         self.add(lbl_800)
 
         # ══════════════════════════════════════════════════════
-        # BEAT 4 — Year labels zoom in continuously through end of VO + hold
+        # BEAT 4 — Breath zoom during VO hold
         # ══════════════════════════════════════════════════════
-        T_setup = 0.3 + 0.4 + 0.25 + 0.3 + 0.4 + 0.15 + 0.5 + 0.4
-        zoom_dur = max(self.VD - T_setup, 0) + 1.5
+        T_setup = 0.4 + 0.25 + 0.3 + 0.4 + 0.15 + 0.5 + 0.4   # no fadein for 874
+        zoom_dur = max(self.VD - T_setup, 0)
 
         self.play(
             lbl_800.animate.scale(1.12),
             lbl_874.animate.scale(1.12),
             run_time=zoom_dur, rate_func=linear,
         )
-        self.play(FadeOut(Group(*self.mobjects)), run_time=1.0)
+
+        # ══════════════════════════════════════════════════════
+        # ENDING — Viking exits right, 874 fades, 800 fades,
+        # monk shrinks to tiny avatar (continuous into scene 10)
+        # ══════════════════════════════════════════════════════
+        self.play(
+            viking.animate.shift(RIGHT * 12),
+            FadeOut(lbl_874),
+            run_time=0.5, rate_func=rush_into,
+        )
+        self.play(FadeOut(lbl_800), run_time=0.3)
+
+        # Monk shrinks to tiny avatar at Ireland position
+        # north_atlantic_iceland extent lon -50..25, lat 45..72
+        # Ireland lon=-8, lat=53 → x=0.85, y=-1.63
+        # north_atlantic_wide extent: lon -100..30, lat 20..75
+        # Ireland lon=-8, lat=53 → x=2.95, y=0.8
+        IRELAND_POS = np.array([2.95, 0.8, 0])
+        self.play(
+            monk.animate.set_height(0.75).move_to(IRELAND_POS),
+            run_time=0.6,
+        )
+        # Scene 10 picks up from here — no fadeout
