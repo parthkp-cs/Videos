@@ -14,29 +14,34 @@ from helpers import (load_map, load_character, make_subscribe_cta,
 
 
 class IcelandEP1_S08_TimeRewind(Scene):
-    VD = 7.2  # VO_DURATION_ACTUAL — replace with ffprobe result after TTS
+    VD = 7.2   # ffprobe confirmed actual TTS duration
 
     def construct(self):
-        self.camera.background_color = "#003897"
+        self.camera.background_color = "#B3CDE0"  # matches ocean colour of map
         Text.set_default(font="Poppins")
-        sea_map = load_map("north_atlantic_dark")
-        sea_map.set_opacity(0.8)
+        MAP_PATH = Path(__file__).resolve().parents[2] / "Output/Iceland/maps/north_atlantic_clean.png"
+        sea_map = ImageMobject(str(MAP_PATH))
+        sea_map.set_height(config.frame_height)   # fill frame top-to-bottom, no black bars
+        sea_map.move_to(ORIGIN)
         self.add(sea_map)
-        self.play(sea_map.animate.scale(0.15), run_time=3.0)
-        years = ["2008","1944","1874","1262","1000","874"]
-        yr_txt = Text(years[0], font_size=40, color="#C87941").move_to([0,-0.5,0])
-        self.play(FadeIn(yr_txt), run_time=0.2)
+        # Year counter — hero of the scene, consistent size, paced to fill VO
+        years = ["2008", "1944", "1874", "1262", "1000", "874"]
+        FADE_IN   = 0.6
+        N_TRANS   = len(years) - 1                           # 5 transitions
+        PER_YEAR  = (self.VD - FADE_IN - 1.5) / N_TRANS     # ~1.7s each
+
+        yr_txt = Text(years[0], font="Poppins", weight=BOLD,
+                      font_size=120, color="#C87941").move_to(ORIGIN)
+        self.play(FadeIn(yr_txt, scale=1.1), run_time=FADE_IN)
+
         for y in years[1:]:
-            new_t = Text(y, font_size=40, color="#C87941").move_to([0,-0.5,0])
-            self.play(FadeTransform(yr_txt, new_t), run_time=0.15)
+            new_t = Text(y, font="Poppins", weight=BOLD,
+                         font_size=120, color="#C87941").move_to(ORIGIN)
+            self.play(FadeTransform(yr_txt, new_t), run_time=PER_YEAR)
             yr_txt = new_t
-        self.play(FadeOut(yr_txt), run_time=0.3)
-        year_lbl = Text("874 AD", font="Poppins", weight=BOLD, font_size=80, color="#C87941").move_to([0,0,0])
-        self.play(FadeIn(year_lbl), run_time=1.5)
-        glow = Rectangle(width=5, height=1.8, fill_color="#C87941", fill_opacity=0, stroke_width=0).move_to(year_lbl)
-        self.add(glow)
-        self.play(glow.animate.set_fill(opacity=0.12), run_time=2.0)
-        T = 7.0
+
+        # "874" holds as the final frame
+        T = FADE_IN + N_TRANS * PER_YEAR
         self.wait(max(self.VD - T, 0) + 1.5)
         self.play(FadeOut(Group(*self.mobjects)), run_time=1.0)
 
