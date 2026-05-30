@@ -28,7 +28,6 @@ Output/*/videos/
 
 # Old full-episode video folder
 Output/Iceland/video/
-Output/Iceland/reference/
 
 # Scene render cache from old pipeline
 Scripts/Iceland/scene_cache/
