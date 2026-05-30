@@ -22,12 +22,13 @@ Output/*/videos/
 *.mov
 *.avi
 
-# Allow approved scene renders in Output/{Country}/renders/
+# Allow approved scene renders and full episode cuts
 !Output/*/renders/*.mp4
 !Output/*/renders/*.mov
+!Output/*/video/*.mp4
+!Output/*/video/*.mov
 
-# Old full-episode video folder
-Output/Iceland/video/
+# Old full-episode video folder — intentionally empty, videos tracked directly
 
 # Scene render cache from old pipeline
 Scripts/Iceland/scene_cache/
