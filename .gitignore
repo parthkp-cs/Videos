@@ -16,14 +16,17 @@ scenes/media/
 */scenes/media/
 Scripts/*/media/
 
-# Video renders — too large for git
+# Video renders — block Manim cache and scratch renders
 *.mp4
 *.mov
 *.avi
 
-# Old full-episode video folder and renders
+# Allow approved scene renders in Output/{Country}/renders/
+!Output/*/renders/*.mp4
+!Output/*/renders/*.mov
+
+# Old full-episode video folder
 Output/Iceland/video/
-Output/Iceland/renders/
 Output/Iceland/reference/
 
 # Scene render cache from old pipeline
